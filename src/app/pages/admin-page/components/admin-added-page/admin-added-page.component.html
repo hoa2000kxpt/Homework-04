@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Insert User Page</h3>
+            <hr>
+            <form [formGroup]="insertUserForm" (ngSubmit)="onSubmit()"> 
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id"  formControlName="id" >
+                    <span *ngIf="id!.invalid && id!.touched" [ngStyle]="{'color': 'red'}">ID is required </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" formControlName="username">
+                    <span *ngIf="username!.invalid && username!.touched" [ngStyle]="{'color': 'red'}">Username is required </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email"  formControlName="email">
+                    <span *ngIf="email!.invalid && email!.touched" [ngStyle]="{'color': 'red'}">Email is required</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" class="form-control" id="fullname" formControlName="fullname">
+                    <span *ngIf="fullname!.invalid && fullname!.touched" [ngStyle]="{'color': 'red'}">Fullname is required </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+                    <span *ngIf="phoneNumber!.invalid && phoneNumber!.touched" [ngStyle]="{'color': 'red'}">Phone number is required </span> 
+                </div>
+                
+                <button type="submit" class="btn btn-primary" [disabled]="!insertUserForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

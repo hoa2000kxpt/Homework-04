@@ -1,0 +1,23 @@
+.login-page {
+    position: relative;
+    top: 150px;
+    left: 400px;
+    /* border: 1px solid black; */
+}
+
+.login-page input {
+    width: 30%;
+}
+
+.login-page i {
+    position: absolute;
+    background-color: brown;
+}
+
+.alert-danger {
+    width: 30%;
+}
+
+.btn-primary {
+    width: 30%;
+}

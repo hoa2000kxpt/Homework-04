@@ -1,0 +1,29 @@
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav, mat-sidenav-content {
+    padding: 16px;
+}
+
+mat-sidenav {
+    background-color: lightcoral;
+    width: 200px;;
+}
+
+.list-group-item {
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3 ease;
+    text-align: center;
+}
+
+.list-group-item:hover {
+    background-color: #0984e3;
+    color: #fff;
+}
+
+.button-area {
+    display: flex;
+    justify-content: space-between;
+}

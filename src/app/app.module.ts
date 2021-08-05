@@ -1,0 +1,57 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { AdminTableComponent } from './pages/admin-page/components/admin-table/admin-table.component';
+import { AdminAddedPageComponent } from './pages/admin-page/components/admin-added-page/admin-added-page.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { HeaderComponent } from './pages/header/header.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminDashboardComponent } from './pages/admin-page/components/admin-dashboard/admin-dashboard.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import { DataTablesModule } from "angular-datatables";
+import { UpperCasePipe } from '@angular/common';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    AdminTableComponent,
+    AdminAddedPageComponent,
+    AdminPageComponent,
+    HeaderComponent,
+    LoginComponent,
+    RegisterComponent,
+    AdminDashboardComponent,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    HttpClientModule,
+    MatIconModule,
+    MatDividerModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatMenuModule,
+    DataTablesModule
+
+  ],
+  providers: [
+    UpperCasePipe
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
