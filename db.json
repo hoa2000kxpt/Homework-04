@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "gender": 1,
+      "username": "Hoa Do",
+      "email": "hoa2000kx@gmail.com",
+      "fullname": "Do Van Hoa",
+      "phoneNumber": "0123456789",
+      "postsCreated": "Fri Aug 03 2021 09:30:00"
+    },
+    {
+      "id": 3,
+      "gender": 1,
+      "username": "Hoang Hieu",
+      "email": "hieu4c18@gmail.com",
+      "fullname": "Hoang Trung Hieu",
+      "phoneNumber": "0111222333",
+      "postsCreated": "Fri Aug 03 2021 09:30:00"
+    },
+    {
+      "id": 4,
+      "gender": 1,
+      "username": "Trung Thanh",
+      "email": "trungthanh7c18@gmail.com",
+      "fullname": "Nguyen Trung Thanh",
+      "phoneNumber": "0444555666",
+      "postsCreated": "Fri Aug 03 2021 09:30:00"
+    },
+    {
+      "id": 5,
+      "gender": 1,
+      "username": "Duc Tung",
+      "email": "ductung1999@gmail.com",
+      "fullname": "Pham Duc Tung",
+      "phoneNumber": "0777888999",
+      "postsCreated": "Fri Aug 03 2021 09:30:00"
+    },
+    {
+      "id": 6,
+      "gender": 0,
+      "username": "Anh Tuyet",
+      "email": "anhtuyet1990@gmail.com",
+      "fullname": "Pham Anh Tuyet",
+      "phoneNumber": "0356148999",
+      "postsCreated": "Fri Aug 03 2021 09:30:00"
+    },
+    {
+      "id": 2,
+      "gender": 1,
+      "username": "Long Vu",
+      "email": "vu4c18@gmail.com",
+      "fullname": "Nguyen Long Vu",
+      "phoneNumber": "999999999",
+      "postsCreated": "Fri Aug 03 2021 09:30:00"
+    },
+    {
+      "id": "7",
+      "username": "test",
+      "email": "sgdxfdfg@gmail.com",
+      "fullname": "ffff",
+      "phoneNumber": "1111"
+    },
+    {
+      "username": "hoa2000kxpt",
+      "email": "sgdxfdfg@gmail.com",
+      "fullname": "Hoa Do",
+      "phoneNumber": "111",
+      "id": "9iFHG76"
+    },
+    {
+      "username": "ấdfasdfasdf",
+      "email": "sdfsfsdf@gmail.com",
+      "fullname": "fafadfafdas",
+      "phoneNumber": "555555",
+      "id": "6wY3y4S"
+    }
+  ]
+}

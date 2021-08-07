@@ -21,6 +21,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { DataTablesModule } from "angular-datatables";
 import { UpperCasePipe } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {customizePipe} from './pages/admin-page/components/admin-table/customize.pipe';
+import { GenderPipePipe } from './pages/admin-page/components/admin-table/gender-pipe.pipe';
+import {MatSelectModule} from '@angular/material/select';
+import { AdminEditPageComponent } from './pages/admin-page/components/admin-edit-page/admin-edit-page.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +38,9 @@ import { UpperCasePipe } from '@angular/common';
     LoginComponent,
     RegisterComponent,
     AdminDashboardComponent,
+    customizePipe,
+    GenderPipePipe,
+    AdminEditPageComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +55,9 @@ import { UpperCasePipe } from '@angular/common';
     MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,
-    DataTablesModule
-
+    DataTablesModule,
+    FontAwesomeModule,
+    MatSelectModule
   ],
   providers: [
     UpperCasePipe

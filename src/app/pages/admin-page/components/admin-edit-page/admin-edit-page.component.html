@@ -1,14 +1,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3>Insert User Page</h3>
+            <h3>Edit User Page</h3>
             <hr>
-            <form [formGroup]="insertUserForm" (ngSubmit)="onSubmit()">
-                <!-- <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" class="form-control" id="id" formControlName="id">
-                    <span *ngIf="id!.invalid && id!.touched" [ngStyle]="{'color': 'red'}">ID is required </span>
-                </div> -->
+            <form [formGroup]="insertUserForm" (ngSubmit)="editSubmit()">
 
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -53,3 +48,5 @@
         </div>
     </div>
 </div>
+
+<!-- <p>Hello!</p> -->

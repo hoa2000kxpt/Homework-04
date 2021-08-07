@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import {  FormControl, FormGroup, Validators} from '@angular/forms'
 import { Router } from '@angular/router';
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authenticationService: AuthService) 
+    private authenticationService: AuthService,
+    ) 
     { }
 
   ngOnInit(): void {

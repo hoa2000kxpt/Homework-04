@@ -12,7 +12,7 @@
 </div> -->
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="push" [(opened)]="opened">
+    <mat-sidenav #sidenav mode="push" [(opened)]="opened" position="start">
         <div class="" id="sidebar-wrapper">
             <div class="list-group">
                 <a href="#" class="list-group-item"><i class="fas fa-users" style="float: left;"></i> User Management
@@ -25,8 +25,12 @@
         </div>
     </mat-sidenav>
 
-    <!-- <mat-sidenav #insertUser mode="push" [(opened)]="openedInsertUser"> 
+    <mat-sidenav #insertUser mode="push" [(opened)]="openedInsertUser" position="end" id="insert-user"> 
+        <app-admin-added-page (submitUser)="addUser($event)"></app-admin-added-page>
+    </mat-sidenav>
 
+    <!-- <mat-sidenav #editUser mode="push" [(opened)]="openedEditUser" position="end" id="edit-user"> 
+        <app-admin-edit-page></app-admin-edit-page>
     </mat-sidenav> -->
 
     <mat-sidenav-content>
@@ -34,7 +38,7 @@
             <button class="btn btn-primary" (click)="sidenav.toggle()">Sidebar <i
                     class="fas fa-align-right"></i></button>
 
-            <button class="btn btn-success">Add user <i class="fas fa-plus"></i></button>
+            <button class="btn btn-success" (click)="insertUser.open()">Add user <i class="fas fa-plus"></i></button>
         </div>
 
         <app-admin-table [users]="userList"></app-admin-table>

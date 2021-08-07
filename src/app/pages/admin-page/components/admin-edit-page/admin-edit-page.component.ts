@@ -4,26 +4,21 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
-  selector: 'app-admin-added-page',
-  templateUrl: './admin-added-page.component.html',
-  styleUrls: ['./admin-added-page.component.css']
+  selector: 'app-admin-edit-page',
+  templateUrl: './admin-edit-page.component.html',
+  styleUrls: ['./admin-edit-page.component.css']
 })
-export class AdminAddedPageComponent implements OnInit {
-  // email = "";
-  // id = "";
-  // username = "";
-  // fullname = "";
-  // phoneNumber = "";
+export class AdminEditPageComponent implements OnInit {
+  openedEditUser = false;
   @Output() submitUser = new EventEmitter<any>();
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    
+
   }
 
   insertUserForm = new FormGroup({
-    // id: new FormControl('', Validators.required),
     username: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
     fullname: new FormControl('', Validators.required),
@@ -54,7 +49,7 @@ export class AdminAddedPageComponent implements OnInit {
     return this.insertUserForm.get('gender');
   }
 
-  onSubmit() {
+  editSubmit() {
     console.log(this.insertUserForm.value);
     const options = { Headers, responseType: 'json' as 'blob' };
     this.http.post('http://localhost:3000/users', this.insertUserForm.value, options).subscribe(
@@ -65,10 +60,7 @@ export class AdminAddedPageComponent implements OnInit {
         console.log(err.message);
       }
     );
-    
+
     this.submitUser.emit(this.insertUserForm.value)
   }
-
-
-
 }
