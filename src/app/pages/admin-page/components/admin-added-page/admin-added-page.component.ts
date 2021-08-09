@@ -27,7 +27,8 @@ export class AdminAddedPageComponent implements OnInit {
     username: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
     fullname: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', Validators.required)
+    phoneNumber: new FormControl('', Validators.required),
+    gender: new FormControl('')
   })
 
   // get id() {

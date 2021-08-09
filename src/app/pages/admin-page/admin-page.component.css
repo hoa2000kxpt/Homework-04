@@ -1,9 +1,15 @@
+body {
+    overflow: hidden !important;
+}
+
 mat-sidenav-container {
     height: 100%;
+    /* overflow: hidden; */
 }
 
 mat-sidenav, mat-sidenav-content {
     padding: 16px;
+    /* overflow: hidden; */
 }
 
 mat-sidenav {
@@ -27,3 +33,4 @@ mat-sidenav {
     display: flex;
     justify-content: space-between;
 }
+

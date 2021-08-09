@@ -1,0 +1,27 @@
+<h1>Product Management</h1>
+<table class="table table-striped" id="products">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let col of columns">
+                {{ col }}
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let product of products">
+            <th>{{ product.id }}</th>
+            <td>{{ product.name }}</td>
+            <td>{{ product.keyNo }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                <a class="btn btn-info" style="margin-right: 3px;"><i
+                    class="far fa-eye"></i></a>
+            <a class="btn btn-warning"  style="margin-right: 3px;"><i
+                    class="far fa-edit"></i></a>
+            <a class="btn btn-danger" style="margin-right: 3px;"><i class="far fa-trash-alt"></i></a>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>

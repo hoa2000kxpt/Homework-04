@@ -1,46 +1,38 @@
-<mat-sidenav-container>
-    <mat-sidenav #editUser mode="push" [(opened)]="openedEditUser" position="end" id="edit-user">
-        <app-admin-edit-page></app-admin-edit-page>
-    </mat-sidenav>
+<div style="margin-top: 1em;">
+    <h1>User Management</h1>
+    <table class="table table-striped" id="dataTable" [dtOptions]="dtOptions" datatable>
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Username</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Email</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Time Created</th>
+                <th scope="col">Action</th>
 
-    <mat-sidenav-content>
-        <div style="margin-top: 1em;">
-            <h1>User Management</h1>
-            <table class="table table-striped" id="myTable" [dtOptions]="dtOptions" datatable>
-                <thead>
-                    <tr>
-                        <th scope="col">No.</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Gender</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Phone Number</th>
-                        <th scope="col">Time Created</th>
-                        <th scope="col">Action</th>
+            </tr>
+        </thead>
 
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr *ngFor="let user of users; index as i;">
-                        <th scope="row">{{ user.id }}</th>
-                        <td>{{ user.username | uppercase }}</td>
-                        <td>{{ user.gender | genderPipe }}</td>
-                        <td>{{ user.email }}</td>
-                        <td>{{ user.fullname | uppercase}}</td>
-                        <td>{{ user.phoneNumber }}</td>
-                        <td>{{ user.postsCreated | convertDate }}</td>
-                        <td>
-                            <a class="btn btn-info" (click)="viewUser(i)" style="margin-right: 3px;"><i
-                                    class="far fa-eye"></i></a>
-                            <a class="btn btn-warning" (click)="editUser.open()" style="margin-right: 3px;"><i
-                                    class="far fa-edit"></i></a>
-                            <a class="btn btn-danger" style="margin-right: 3px;"><i class="far fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </mat-sidenav-content>
-
-</mat-sidenav-container>
+        <tbody>
+            <tr *ngFor="let user of users; index as i;">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.username | uppercase }}</td>
+                <td>{{ user.gender | genderPipe }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.fullname | uppercase}}</td>
+                <td>{{ user.phoneNumber }}</td>
+                <td>{{ user.postsCreated | convertDate }}</td>
+                <td>
+                    <a class="btn btn-info" (click)="viewUser(i)" style="margin-right: 3px;"><i
+                            class="far fa-eye"></i></a>
+                    <a class="btn btn-warning" (click)="editButtonClick(user.id)" style="margin-right: 3px;"><i
+                            class="far fa-edit"></i></a>
+                    <a class="btn btn-danger" style="margin-right: 3px;" (click)="onDelete(user.id)"><i
+                            class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

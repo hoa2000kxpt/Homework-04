@@ -26,6 +26,10 @@ import {customizePipe} from './pages/admin-page/components/admin-table/customize
 import { GenderPipePipe } from './pages/admin-page/components/admin-table/gender-pipe.pipe';
 import {MatSelectModule} from '@angular/material/select';
 import { AdminEditPageComponent } from './pages/admin-page/components/admin-edit-page/admin-edit-page.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductTableComponent } from './pages/product-page/components/product-table/product-table.component';
+import { UserPageComponent } from './pages/user-page/user-page.component';
+import { AuthService } from './authentication/auth.service';
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { AdminEditPageComponent } from './pages/admin-page/components/admin-edit
     AdminDashboardComponent,
     customizePipe,
     GenderPipePipe,
-    AdminEditPageComponent
+    AdminEditPageComponent,
+    ProductPageComponent,
+    ProductTableComponent,
+    UserPageComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -60,7 +68,9 @@ import { AdminEditPageComponent } from './pages/admin-page/components/admin-edit
     MatSelectModule
   ],
   providers: [
-    UpperCasePipe
+    UpperCasePipe,
+    AuthService
+
   ],
   bootstrap: [AppComponent]
 })

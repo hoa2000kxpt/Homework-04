@@ -7,43 +7,45 @@
 
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" formControlName="username">
+                    <input type="text" class="form-control" id="username" formControlName="username" required>
                     <span *ngIf="username!.invalid && username!.touched" [ngStyle]="{'color': 'red'}">Username is
                         required </span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" formControlName="email">
+                    <input type="email" class="form-control" id="email" formControlName="email" required>
                     <span *ngIf="email!.invalid && email!.touched" [ngStyle]="{'color': 'red'}">Email is required</span>
                 </div>
 
                 <div class="form-group">
                     <label for="fullname">Full Name</label>
-                    <input type="text" class="form-control" id="fullname" formControlName="fullname">
+                    <input type="text" class="form-control" id="fullname" formControlName="fullname" required>
                     <span *ngIf="fullname!.invalid && fullname!.touched" [ngStyle]="{'color': 'red'}">Fullname is
                         required </span>
                 </div>
 
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number</label>
-                    <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+                    <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" required>
                     <span *ngIf="phoneNumber!.invalid && phoneNumber!.touched" [ngStyle]="{'color': 'red'}">Phone number
                         is required </span>
                 </div>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Choose an option</mat-label>
-                    <mat-select>
-                        <mat-option value="option1" disabled>Choose your gender</mat-option>
-                        <mat-option value="0">Female</mat-option>
-                        <mat-option value="1">Male</mat-option>
+                    <mat-select formControlName="gender">
+                        <mat-option disabled>Choose your gender</mat-option>
+                        <mat-option [value]="0">Female</mat-option>
+                        <mat-option [value]="1">Male</mat-option>
                     </mat-select>
-
-
                 </mat-form-field>
 
-                <button type="submit" class="btn btn-primary" [disabled]="!insertUserForm.valid">Submit</button>
+                <div class="button-area">
+                    <button type="submit" class="btn btn-primary" [disabled]="!insertUserForm.valid">Edit</button>
+                    <a [routerLink]="['/adminPage']" class="btn btn-secondary" style="margin-left: 1em;">Cancel</a>
+                </div>
+
             </form>
         </div>
     </div>

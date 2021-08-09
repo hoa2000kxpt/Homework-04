@@ -15,13 +15,14 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit() {
     $(document).ready(function () {
 
-      $("#menu-toggle").click(function(e) {
-          e.preventDefault();
-          $("#wrapper").toggleClass("toggled");
-          
+      $('.list-group-item').click(function () {
+        if ($(this).is("active"))
+          $('.list-group-item').not(this).removeClass('active');
+        else
+          $(this).addClass('active');
+        $('.list-group-item').not(this).removeClass('active');
       });
-  
-  });
+    });
 
   }
 }

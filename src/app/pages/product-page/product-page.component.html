@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="push" [(opened)]="opened" position="start">
+        <app-admin-dashboard></app-admin-dashboard>    
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="button-area">
+            <button class="btn btn-primary" (click)="sidenav.toggle()">Sidebar <i
+                    class="fas fa-align-right"></i></button>
+
+            <!-- <button class="btn btn-success" (click)="insertUser.open()">Add user <i class="fas fa-plus"></i></button> -->
+        </div>
+
+        <app-product-table></app-product-table>
+    </mat-sidenav-content>
+</mat-sidenav-container>

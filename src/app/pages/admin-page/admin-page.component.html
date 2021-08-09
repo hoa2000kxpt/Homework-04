@@ -13,25 +13,13 @@
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="push" [(opened)]="opened" position="start">
-        <div class="" id="sidebar-wrapper">
-            <div class="list-group">
-                <a href="#" class="list-group-item"><i class="fas fa-users" style="float: left;"></i> User Management
-                </a>
-                <a href="#" class="list-group-item"><i class="fas fa-tachometer-alt" style="float: left;"></i> Dashboard
-                </a>
-                <a href="#" class="list-group-item"><i class="fas fa-question" style="float: left;"></i> Q && A </a>
-                <a href="#" class="list-group-item"><i class="fas fa-phone" style="float: left;"></i> Contact </a>
-            </div>
-        </div>
+        <app-admin-dashboard></app-admin-dashboard>    
     </mat-sidenav>
 
     <mat-sidenav #insertUser mode="push" [(opened)]="openedInsertUser" position="end" id="insert-user"> 
         <app-admin-added-page (submitUser)="addUser($event)"></app-admin-added-page>
     </mat-sidenav>
 
-    <!-- <mat-sidenav #editUser mode="push" [(opened)]="openedEditUser" position="end" id="edit-user"> 
-        <app-admin-edit-page></app-admin-edit-page>
-    </mat-sidenav> -->
 
     <mat-sidenav-content>
         <div class="button-area">
