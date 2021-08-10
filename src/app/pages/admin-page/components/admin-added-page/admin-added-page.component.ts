@@ -9,11 +9,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./admin-added-page.component.css']
 })
 export class AdminAddedPageComponent implements OnInit {
-  // email = "";
-  // id = "";
-  // username = "";
-  // fullname = "";
-  // phoneNumber = "";
+
   @Output() submitUser = new EventEmitter<any>();
 
   constructor(private http: HttpClient) { }
@@ -25,35 +21,24 @@ export class AdminAddedPageComponent implements OnInit {
   insertUserForm = new FormGroup({
     // id: new FormControl('', Validators.required),
     username: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+    email: new FormControl('',[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     fullname: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', Validators.required),
-    gender: new FormControl('')
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    dob: new FormControl('', Validators.required),
+    gender: new FormControl('', Validators.required),
+    status: new FormControl('', Validators.required)
   })
 
   // get id() {
   //   return this.insertUserForm.get('id');
   // }
 
-  get username() {
-    return this.insertUserForm.get('username');
+  get userSubmit() {
+    return this.insertUserForm.controls;
   }
 
-  get email() {
-    return this.insertUserForm.get('email');
-  }
-
-  get fullname() {
-    return this.insertUserForm.get('fullname');
-  }
-
-  get phoneNumber() {
-    return this.insertUserForm.get('phoneNumber');
-  }
-
-  get gender() {
-    return this.insertUserForm.get('gender');
-  }
+ 
 
   onSubmit() {
     console.log(this.insertUserForm.value);

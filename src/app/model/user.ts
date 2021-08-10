@@ -5,7 +5,7 @@ export class User {
     email: string;
     fullname: string="";
     phoneNumber: string="";
-    postCreated: string="";
+    dob: string="";
     password: string;
     role: string="";
     status: string="";

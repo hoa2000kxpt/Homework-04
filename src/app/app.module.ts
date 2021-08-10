@@ -30,6 +30,8 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { ProductTableComponent } from './pages/product-page/components/product-table/product-table.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { AuthService } from './authentication/auth.service';
+import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -65,7 +67,10 @@ import { AuthService } from './authentication/auth.service';
     MatMenuModule,
     DataTablesModule,
     FontAwesomeModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule,
+    MatRadioModule
+
   ],
   providers: [
     UpperCasePipe,

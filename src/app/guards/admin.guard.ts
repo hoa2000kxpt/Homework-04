@@ -24,11 +24,12 @@ export class adminGuard implements CanActivate {
     if (this.authenticationService.isAuthenticated
       && this.defineRole != null) {
       let role = JSON.parse(this.defineRole).role;
-      if (role == "admin") {
+      if (role === "admin") {
+        // this.router.navigate(['/adminPage']);
         return true;
-      }
+      } 
     }
-    this.router.navigate(['/login']);
+    this.router.navigate(['/admin']);
     return false;
   }
 
