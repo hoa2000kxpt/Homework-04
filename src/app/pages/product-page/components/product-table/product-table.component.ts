@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Products } from 'src/app/model/products';
 import Swal from 'sweetalert2';
 import { RestService } from './rest.service';
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-product-table',
@@ -10,12 +12,12 @@ import { RestService } from './rest.service';
 })
 export class ProductTableComponent implements OnInit {
   columns = ["Product ID", "Product Name", "Product Image", "Number of keys", "Descrption" ,"Price", "Functions"];
-
+  dtOptions: DataTables.Settings = {};
   // index = ["id", "desc", "price"]
 
   @Input() products: Products[] = [];
 
-  constructor(private rs: RestService) { }
+  constructor(private rs: RestService, private router: Router) { }
 
   ngOnInit(): void {
     this.rs.getProducts().subscribe(
@@ -27,6 +29,14 @@ export class ProductTableComponent implements OnInit {
         console.log("Errors occured!" + err);
       }
     )
+
+    $.noConflict();
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+
+      // pageLength: 2
+    };
+    $('#productsTable').DataTable();
   }
 
   onDelete(id: any) {
@@ -53,6 +63,7 @@ export class ProductTableComponent implements OnInit {
       
   }
 
-  
-
+  editButtonClick(id: any) {
+    this.router.navigate(['/productManagement/edit', id])
+  }
 }

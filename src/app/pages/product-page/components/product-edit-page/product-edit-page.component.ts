@@ -15,6 +15,17 @@ export class ProductEditPageComponent implements OnInit {
     , private router: ActivatedRoute, private _routing: Router) { }
 
   ngOnInit(): void {
+    this.productService.getCurrentProduct(this.router.snapshot.params.id).subscribe(
+      res => {
+        this.insertProductForm = new FormGroup({
+          name: new FormControl(res['name']),
+          keyNo: new FormControl(res['keyNo']),
+          description: new FormControl(res['description']),
+          price: new FormControl(res['price']),
+          image: new FormControl(res['image'])
+        })
+      }
+    )
   }
 
   insertProductForm = new FormGroup({
