@@ -1,24 +1,16 @@
 {
   "users": [
     {
-      "username": "Hoa Do",
+      "username": "Hoa Prox",
       "email": "hoa2000kxpt@gmail.com",
       "fullname": "Do Van Hoa",
-      "phoneNumber": "999999999",
-      "gender": 1,
+      "phoneNumber": "11111",
+      "gender": "1",
       "password": "123456",
       "role": "admin",
       "status": "activated",
+      "dob": "2000-09-26",
       "id": 1
-    },
-    {
-      "id": 2,
-      "gender": 0,
-      "username": "Long Vux",
-      "email": "vu4c18@gmail.com",
-      "fullname": "Nguyen Long Vu",
-      "phoneNumber": "999999999",
-      "dob": "Fri Aug 03 2021 09:30:00"
     },
     {
       "id": 3,
@@ -33,27 +25,16 @@
       "status": "deactivated"
     },
     {
-      "id": 4,
-      "gender": 1,
-      "username": "Trung Thanh",
-      "email": "trungthanh7c18@gmail.com",
-      "fullname": "Nguyen Trung Thanh",
-      "phoneNumber": "0444555666",
-      "dob": "Fri Aug 03 2021 09:30:00",
-      "password": "444444",
-      "role": "user",
-      "status": "activated"
-    },
-    {
-      "username": "test",
+      "username": "",
       "email": "test@gmail.com",
       "fullname": "Test",
-      "phoneNumber": "0111222333",
+      "phoneNumber": "555555",
+      "gender": "1",
       "password": "123456",
+      "role": null,
+      "status": "activated",
       "dob": "2000-09-26",
-      "gender": "0",
-      "status": "deactivated",
-      "id": 5
+      "id": 4
     }
   ],
   "products": [
@@ -61,19 +42,33 @@
       "id": 1,
       "name": "Bàn phím chơi game giả cơ E-DRA EK503",
       "keyNo": 104,
-      "price": "269.000đ"
+      "price": "269000",
+      "description": "phân khúc giá dưới 300 ngàn",
+      "image": "http://edravn.com/media/product/344_z2611444876451_c32d22d534df416029532d5c50d53abb.jpg"
     },
     {
       "id": 2,
       "name": "Bàn phím chơi game cơ E-DRA EK389v2",
       "keyNo": 89,
-      "price": "659.000đ"
+      "price": "659000",
+      "description": "phân khúc giá dưới 600 ngàn - 800 ngàn",
+      "image": "http://edravn.com/media/product/342_1.jpg"
     },
     {
       "id": 3,
       "name": "Bàn phím chơi game cơ E-DRA EK3104 Optical",
       "keyNo": 104,
-      "price": "990.000đ"
+      "price": "990000",
+      "description": "phân khúc giá dưới 800 ngàn - 1 triệu",
+      "image": "http://edravn.com/media/product/325_w4.jpg"
+    },
+    {
+      "name": "Bàn phím chơi game cơ E-DRA EK387w RGB TKL",
+      "keyNo": 87,
+      "description": "phân khúc giá trên 1 triệu",
+      "price": 1290000,
+      "image": "http://edravn.com/media/product/324_w2.jpg",
+      "id": 4
     }
   ]
 }

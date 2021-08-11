@@ -11,6 +11,7 @@ export class AdminPageComponent implements OnInit {
   openedInsertUser = false;
   openedEditUser = false;
   userList: Array<any> = [];
+  title: string = "Admin Page"
 
     
     constructor(private http: HttpClient) { }

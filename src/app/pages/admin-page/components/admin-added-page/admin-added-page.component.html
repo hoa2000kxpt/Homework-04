@@ -20,12 +20,13 @@
 
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" formControlName="email">
+                    <input type="email" class="form-control" id="email" formControlName="email" uniqueEmail>
                     <div *ngIf="(userSubmit.email!.invalid && userSubmit.email!.touched) || userSubmit.email!.dirty">
                         <span *ngIf="userSubmit.email.errors?.required" [ngStyle]="{'color': 'red'}">Email is
                             required</span>
                         <span *ngIf="userSubmit.email.errors?.pattern" [ngStyle]="{'color': 'red'}">Email is
                             invalid</span>
+                        <span *ngIf="userSubmit.email.errors?.uniqueEmail" [ngStyle]="{'color': 'red'}">Email already exists</span>
                     </div>
                 </div>
 
@@ -42,8 +43,7 @@
                     <input type="password" class="form-control" id="password" formControlName="password">
                     <div
                         *ngIf="(userSubmit.password!.invalid && userSubmit.password!.touched) || userSubmit.password!.dirty">
-                        <span *ngIf="userSubmit.password.errors?.required"
-                            [ngStyle]="{'color': 'red'}">Password is
+                        <span *ngIf="userSubmit.password.errors?.required" [ngStyle]="{'color': 'red'}">Password is
                             required </span>
                         <span *ngIf="userSubmit.password.errors?.minlength" [ngStyle]="{'color': 'red'}">Password must
                             be at least 6 characters long</span>
@@ -74,10 +74,12 @@
                         <mat-option value="0">Female</mat-option>
                         <mat-option value="1">Male</mat-option>
                     </mat-select>
+                    <span *ngIf="userSubmit.gender!.invalid && userSubmit.gender!.touched" [ngStyle]="{'color': 'red'}">Gender is required
+                        </span>
                 </mat-form-field>
 
                 <mat-radio-group aria-label="Select an option" formControlName="status">
-                    <mat-radio-button value="avtivated">Avtivated</mat-radio-button>
+                    <mat-radio-button value="activated">Activated</mat-radio-button>
                     <mat-radio-button value="deactivated">Deactivated</mat-radio-button>
                 </mat-radio-group>
 

@@ -23,7 +23,7 @@ export class AdminTableComponent implements OnInit {
   openedEditUser = false;
 
   constructor(private rs: RsService, private router: Router) { }
-  
+
   ngOnInit() {
     $.noConflict();
     this.dtOptions = {
@@ -36,7 +36,7 @@ export class AdminTableComponent implements OnInit {
 
   transform(value: any) {
     return value.substr(0, 10);
-  }  
+  }
 
   viewUser(pos: any) {
 
@@ -63,14 +63,14 @@ export class AdminTableComponent implements OnInit {
           'success'
         )
         this.rs.deleteUser(id).subscribe(res => {
-        
+
         });
       }
     })
-      
+
   }
 
-  
+
   editButtonClick(id: number) {
     this.router.navigate(['/edit', id])
   }

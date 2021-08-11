@@ -8,38 +8,72 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" id="username" formControlName="username" required>
-                    <span *ngIf="username!.invalid && username!.touched" [ngStyle]="{'color': 'red'}">Username is
+                    <span *ngIf="userSubmit.username!.invalid && userSubmit.username!.touched"
+                        [ngStyle]="{'color': 'red'}">Username is
                         required </span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" formControlName="email" required>
-                    <span *ngIf="email!.invalid && email!.touched" [ngStyle]="{'color': 'red'}">Email is required</span>
+                    <input type="email" class="form-control" id="email" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    <div *ngIf="(userSubmit.email!.invalid && userSubmit.email!.touched) || userSubmit.email!.dirty">
+                        <span *ngIf="userSubmit.email.errors?.required" [ngStyle]="{'color': 'red'}">Email is
+                            required</span>
+                        <span *ngIf="userSubmit.email.errors?.pattern" [ngStyle]="{'color': 'red'}">Email is
+                            invalid</span>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="fullname">Full Name</label>
                     <input type="text" class="form-control" id="fullname" formControlName="fullname" required>
-                    <span *ngIf="fullname!.invalid && fullname!.touched" [ngStyle]="{'color': 'red'}">Fullname is
+                    <span *ngIf="userSubmit.fullname!.invalid && userSubmit.fullname!.touched"
+                        [ngStyle]="{'color': 'red'}">Fullname is
                         required </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password" minlength="6" required>
+                    <div
+                        *ngIf="(userSubmit.password!.invalid && userSubmit.password!.touched) || userSubmit.password!.dirty">
+                        <span *ngIf="userSubmit.password.errors?.required" [ngStyle]="{'color': 'red'}">Password is
+                            required </span>
+                        <span *ngIf="userSubmit.password.errors?.minlength" [ngStyle]="{'color': 'red'}">Password must
+                            be at least 6 characters long</span>
+                    </div>
+
                 </div>
 
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number</label>
                     <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" required>
-                    <span *ngIf="phoneNumber!.invalid && phoneNumber!.touched" [ngStyle]="{'color': 'red'}">Phone number
+                    <span *ngIf="userSubmit.phoneNumber!.invalid && userSubmit.phoneNumber!.touched"
+                        [ngStyle]="{'color': 'red'}">Phone number
+                        is required </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of birth</label>
+                    <input type="date" class="form-control" id="dob" formControlName="dob">
+                    <span *ngIf="userSubmit.dob!.invalid && userSubmit.dob!.touched" [ngStyle]="{'color': 'red'}">Date
+                        of birth
                         is required </span>
                 </div>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Choose an option</mat-label>
+                    <mat-label>Select your gender</mat-label>
                     <mat-select formControlName="gender">
-                        <mat-option disabled>Choose your gender</mat-option>
-                        <mat-option [value]="0">Female</mat-option>
-                        <mat-option [value]="1">Male</mat-option>
+                        <mat-option value="option1" disabled>Options are below</mat-option>
+                        <mat-option value="0">Female</mat-option>
+                        <mat-option value="1">Male</mat-option>
                     </mat-select>
                 </mat-form-field>
+
+                <mat-radio-group aria-label="Select an option" formControlName="status">
+                    <mat-radio-button value="activated">Activated</mat-radio-button>
+                    <mat-radio-button value="deactivated">Deactivated</mat-radio-button>
+                </mat-radio-group>
 
                 <div class="button-area">
                     <button class="btn btn-primary" [disabled]="!insertUserForm.valid">Edit</button>

@@ -15,4 +15,8 @@ export class RestService {
   getProducts(): Observable<Products[]> {
     return this.http.get<Products[]>(this.url);
   }
+
+  deleteProduct(id: any) {
+    return this.http.delete(this.url + '/' +  id);
+  }
 }

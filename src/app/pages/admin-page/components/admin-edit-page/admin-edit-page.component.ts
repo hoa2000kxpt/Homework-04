@@ -27,7 +27,8 @@ export class AdminEditPageComponent implements OnInit {
           gender: new FormControl(res['gender']),
           password: new FormControl(res['password']),
           role: new FormControl(res['role']),
-          status: new FormControl(res['status'])
+          status: new FormControl(res['status']),
+          dob: new FormControl(res['dob'])
         })
       }
     )
@@ -35,42 +36,23 @@ export class AdminEditPageComponent implements OnInit {
 
   insertUserForm: any = new FormGroup({
     username: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     fullname: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', Validators.required),
     gender: new FormControl(''),
     password: new FormControl(''),
     role: new FormControl(''),
     status: new FormControl(''),
+    dob: new FormControl('')
   })
 
 
-
-
-
-  // get id() {
-  //   return this.insertUserForm.get('id');
-  // }
-
-  get username() {
-    return this.insertUserForm.get('username');
+  get userSubmit() {
+    return this.insertUserForm.controls;
   }
 
-  get email() {
-    return this.insertUserForm.get('email');
-  }
 
-  get fullname() {
-    return this.insertUserForm.get('fullname');
-  }
-
-  get phoneNumber() {
-    return this.insertUserForm.get('phoneNumber');
-  }
-
-  get gender() {
-    return this.insertUserForm.get('gender');
-  }
+ 
 
   editSubmit() {
     this.userService.updateUser(this.router.snapshot.params.id, this.insertUserForm.value).subscribe(

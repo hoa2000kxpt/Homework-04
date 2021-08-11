@@ -21,8 +21,7 @@ export class adminGuard implements CanActivate {
     this.defineRole = localStorage.getItem('current-user');
     // console.log(defineRole);
 
-    if (this.authenticationService.isAuthenticated
-      && this.defineRole != null) {
+    if (this.defineRole != null) {
       let role = JSON.parse(this.defineRole).role;
       if (role === "admin") {
         // this.router.navigate(['/adminPage']);

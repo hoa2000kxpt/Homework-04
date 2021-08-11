@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AdminTableComponent } from './pages/admin-page/components/admin-table/admin-table.component';
@@ -20,7 +20,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { DataTablesModule } from "angular-datatables";
-import { UpperCasePipe } from '@angular/common';
+import { UpperCasePipe, CurrencyPipe } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {customizePipe} from './pages/admin-page/components/admin-table/customize.pipe';
 import { GenderPipePipe } from './pages/admin-page/components/admin-table/gender-pipe.pipe';
@@ -32,6 +32,11 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
 import { AuthService } from './authentication/auth.service';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
+import { UniqueEmailValidatorDirective } from './directives/unique-email-validator.directive';
+import { ProductAddPageComponent } from './pages/product-page/components/product-add-page/product-add-page.component';
+import {MatInputModule} from '@angular/material/input';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+import { ProductEditPageComponent } from './pages/product-page/components/product-edit-page/product-edit-page.component';
 
 
 @NgModule({
@@ -50,6 +55,9 @@ import {MatRadioModule} from '@angular/material/radio';
     ProductPageComponent,
     ProductTableComponent,
     UserPageComponent,
+    UniqueEmailValidatorDirective,
+    ProductAddPageComponent,
+    ProductEditPageComponent,
 
   ],
   imports: [
@@ -69,12 +77,16 @@ import {MatRadioModule} from '@angular/material/radio';
     FontAwesomeModule,
     MatSelectModule,
     MatListModule,
-    MatRadioModule
+    MatRadioModule,
+    MatInputModule,
+    AngularFileUploaderModule,
 
   ],
   providers: [
     UpperCasePipe,
-    AuthService
+    AuthService,
+    Title,
+    CurrencyPipe
 
   ],
   bootstrap: [AppComponent]

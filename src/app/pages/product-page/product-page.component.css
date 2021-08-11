@@ -10,5 +10,9 @@ mat-sidenav, mat-sidenav-content {
 
 mat-sidenav {
     background-color: lightcoral;
-    width: 200px;;
+    width: 250px;
+}
+
+mat-sidenav#insert-product {
+    width: 320px;
 }

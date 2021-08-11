@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Insert User Page</h3>
+            <hr>
+            <form [formGroup]="insertProductForm" (ngSubmit)="onEditProduct()">
+
+
+                <div class="form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" class="form-control" id="name" formControlName="name">
+                    <span *ngIf="productForm.name!.invalid && productForm.name!.touched"
+                        [ngStyle]="{'color': 'red'}">Product Name is
+                        required </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Product Image Link</label>
+                    <input type="text" class="form-control" id="image" formControlName="image">
+                    <span *ngIf="productForm.image!.invalid && productForm.image!.touched"
+                        [ngStyle]="{'color': 'red'}">Product Image is
+                        required </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="keyNo">Number of keys</label>
+                    <input type="number" class="form-control" id="keyNo" formControlName="keyNo" min="1">
+                    <span *ngIf="productForm.keyNo!.invalid && productForm.keyNo!.touched"
+                        [ngStyle]="{'color': 'red'}">Number of keys is required </span>
+                </div>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description"></textarea>
+                    <span *ngIf="productForm.description!.invalid && productForm.description!.touched"
+                        [ngStyle]="{'color': 'red'}">Description is required </span>
+                </mat-form-field>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" id="price" formControlName="price" min="1">
+                    <span *ngIf="productForm.price!.invalid && productForm.price!.touched"
+                        [ngStyle]="{'color': 'red'}">Price is required </span>
+                </div>
+
+
+
+
+                <div class="button-area">
+                    <button class="btn btn-primary" [disabled]="!insertProductForm.valid">Edit</button>
+                    <a [routerLink]="['/productManagement']" class="btn btn-secondary"
+                        style="margin-left: 1em;">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

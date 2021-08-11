@@ -22,4 +22,8 @@ export class UserService {
   updateUser(id: any, data: any) {
     return this.http.put(this.url + "/" + id, data);
   }
+
+  getUserByEmail(email: string) {
+    return this.http.get(this.url + "/?email=" + email)
+  }
 }
