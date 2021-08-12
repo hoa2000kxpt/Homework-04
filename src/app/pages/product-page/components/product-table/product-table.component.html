@@ -17,7 +17,7 @@
             <td>{{ product.description }}</td>
             <td>{{ product.price | currency: 'VND': '' }} VND</td>
             <td>
-                <a class="btn btn-info" style="margin-right: 3px;"><i
+                <a class="btn btn-info" (click)="onDetailsProductClick(product.id)" style="margin-right: 3px;"><i
                     class="far fa-eye"></i></a>
             <a class="btn btn-warning" (click)="editButtonClick(product.id)"  style="margin-right: 3px;"><i
                     class="far fa-edit"></i></a>

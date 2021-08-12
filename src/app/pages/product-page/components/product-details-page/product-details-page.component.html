@@ -1,0 +1,25 @@
+<app-header [title]="title"></app-header>
+
+<div class="product-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <img src="{{ productDetails?.image }}" class="product-detail-image">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="product-details-heading">
+                    <h1>{{ productDetails?.name}}</h1>
+                </div>
+
+                <div class="product-details-info">
+                    <p>Number of keys: {{ productDetails?.keyNo}}</p>
+                    <p>Description: {{ productDetails?.description}}</p>
+                    <p>Price: {{ productDetails?.price | currency: 'VND': ''}} VND</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

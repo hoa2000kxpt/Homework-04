@@ -1,0 +1,19 @@
+.product-details {
+    margin-top: 2em;
+}
+
+.product-details .product-detail-image {
+    width: 300px;
+    height: 300px;
+    border: 1px solid gray
+}
+
+.product-details .product-detail-image:hover {
+    transform: scale(1.1);
+    /* transition: all 0.3 ease-out; */
+    cursor: pointer;
+}
+
+.product-details-heading {
+    margin-bottom: 2em;
+}

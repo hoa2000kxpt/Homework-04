@@ -66,4 +66,8 @@ export class ProductTableComponent implements OnInit {
   editButtonClick(id: any) {
     this.router.navigate(['/productManagement/edit', id])
   }
+
+  onDetailsProductClick(id: any) {
+    this.router.navigate(['productManagement/view', id])
+  }
 }

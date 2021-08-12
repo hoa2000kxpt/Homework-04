@@ -10,7 +10,7 @@ export class ProductPageComponent implements OnInit {
   opened = false;
   openedInsertProduct = false;
   productList: Array<any> = [];
-  title: string = "Product Page"
+  title: string = "Product Page";
 
   constructor(private http: HttpClient) { }
 

@@ -10,6 +10,7 @@ import { adminGuard } from './guards/admin.guard';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { AdminEditPageComponent } from './pages/admin-page/components/admin-edit-page/admin-edit-page.component';
 import { ProductEditPageComponent } from './pages/product-page/components/product-edit-page/product-edit-page.component';
+import { ProductDetailsPageComponent } from './pages/product-page/components/product-details-page/product-details-page.component';
 
 const routes: Routes = [
   {path: 'admin', component: LoginComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'edit/:id', component: AdminEditPageComponent},
   {path: 'productManagement', component: ProductPageComponent, data: {title: 'User Page'}},
   {path: 'productManagement/edit/:id', component: ProductEditPageComponent},
+  {path: 'productManagement/view/:id', component: ProductDetailsPageComponent},
   {path: 'adminPage', component: AdminPageComponent, canActivate: [adminGuard]},
   // {path: 'adminPage', component: AdminPageComponent, data: {title: 'Admin Page'}},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
