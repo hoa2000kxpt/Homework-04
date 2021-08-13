@@ -51,17 +51,24 @@
   ],
   "products": [
     {
-      "id": 1,
       "name": "Bàn phím chơi game giả cơ E-DRA EK503",
       "keyNo": 104,
-      "price": "269000",
       "description": "phân khúc giá dưới 300 ngàn",
-      "image": "http://edravn.com/media/product/344_z2611444876451_c32d22d534df416029532d5c50d53abb.jpg"
+      "price": "269000",
+      "image": "http://edravn.com/media/product/344_z2611444876451_c32d22d534df416029532d5c50d53abb.jpg",
+      "id": 1,
+      "transactions": [
+        {
+          "status": "sell",
+          "quantity": 500,
+          "date": "12/08/2000"
+        }
+      ]
     },
     {
       "id": 2,
       "name": "Bàn phím chơi game cơ E-DRA EK389v2",
-      "keyNo": 89,
+      "keyNo": 90,
       "price": "659000",
       "description": "phân khúc giá dưới 600 ngàn - 800 ngàn",
       "image": "http://edravn.com/media/product/342_1.jpg"
@@ -81,6 +88,43 @@
       "price": 1290000,
       "image": "http://edravn.com/media/product/324_w2.jpg",
       "id": 4
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "transactionStatus": "buy",
+      "transactionQuantity": 100,
+      "transactionDate": "2021-08-13",
+      "productID": 1
+    },
+    {
+      "transactionStatus": "sell",
+      "transactionQuantity": 150,
+      "transactionDate": "2021-08-14",
+      "id": 2,
+      "productID": 1
+    },
+    {
+      "transactionStatus": "buy",
+      "transactionQuantity": 50,
+      "transactionDate": "2021-08-21",
+      "id": 3,
+      "productID": 1
+    },
+    {
+      "transactionStatus": "buy",
+      "transactionQuantity": 200,
+      "transactionDate": "2021-08-14",
+      "productID": "2",
+      "id": 4
+    },
+    {
+      "transactionStatus": "buy",
+      "transactionQuantity": 50,
+      "transactionDate": "2021-08-15",
+      "productID": "2",
+      "id": 5
     }
   ]
 }

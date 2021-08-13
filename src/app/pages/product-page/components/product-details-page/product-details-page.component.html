@@ -1,25 +1,42 @@
 <app-header [title]="title"></app-header>
 
-<div class="product-details">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div>
-                    <img src="{{ productDetails?.image }}" class="product-detail-image">
-                </div>
-            </div>
 
-            <div class="col-md-6">
-                <div class="product-details-heading">
-                    <h1>{{ productDetails?.name}}</h1>
+<mat-sidenav-container>
+    <mat-sidenav #insertTransaction mode="push" [(opened)]="openedInsertTransaction" position="end" id="insert-transaction">
+        <app-product-details-add-form (submitTransaction)="addTransaction($event)" [currentProductID]="currentProductID"></app-product-details-add-form>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="product-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <img src="{{ productDetails?.image }}" class="product-detail-image">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="product-details-heading">
+                            <h1>{{ productDetails?.name}}</h1>
+                        </div>
+
+                        <div class="product-details-info">
+                            <p>Number of keys: {{ productDetails?.keyNo}}</p>
+                            <p>Description: {{ productDetails?.description}}</p>
+                            <p>Price: {{ productDetails?.price | currency: 'VND': ''}} VND</p>
+                        </div>
+
+                        <button mat-raised-button color="primary" (click)="insertTransaction.open()">Creat Transaction</button>
+                    </div>
                 </div>
 
-                <div class="product-details-info">
-                    <p>Number of keys: {{ productDetails?.keyNo}}</p>
-                    <p>Description: {{ productDetails?.description}}</p>
-                    <p>Price: {{ productDetails?.price | currency: 'VND': ''}} VND</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <app-product-details-chart [transactions]="transactionDetails" [currentProductID]="currentProductID"></app-product-details-chart>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

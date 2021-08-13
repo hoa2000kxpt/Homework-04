@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-product-page',
@@ -12,7 +13,9 @@ export class ProductPageComponent implements OnInit {
   productList: Array<any> = [];
   title: string = "Product Page";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private titleService:Title) {
+    this.titleService.setTitle("Product Page");
+   }
 
   ngOnInit(): void {
     this.http.get('http://localhost:3000/products').subscribe(

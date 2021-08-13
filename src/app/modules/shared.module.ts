@@ -16,7 +16,7 @@ import { DataTablesModule } from "angular-datatables";
 import { AppRoutingModule } from "../app-routing.module";
 import { AdminDashboardComponent } from "../pages/admin-page/components/admin-dashboard/admin-dashboard.component";
 import { HeaderComponent } from "../pages/header/header.component";
-
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
     declarations: [
         HeaderComponent,
@@ -37,6 +37,7 @@ import { HeaderComponent } from "../pages/header/header.component";
         MatListModule,
         MatRadioModule,
         MatInputModule,
+        MatButtonModule
     ],
     exports: [
         AppRoutingModule,
@@ -57,6 +58,7 @@ import { HeaderComponent } from "../pages/header/header.component";
         MatRadioModule,
         MatInputModule,
         AdminDashboardComponent,
+        MatButtonModule
     ],
 
 })

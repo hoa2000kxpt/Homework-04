@@ -1,6 +1,7 @@
 
-import { Component, OnInit } from '@angular/core';
-import {  FormControl, FormGroup, Validators} from '@angular/forms'
+import { Component, Input, OnInit } from '@angular/core';
+import {  FormControl, FormGroup, Validators} from '@angular/forms';
+import {Title} from "@angular/platform-browser";
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/authentication/auth.service'
 import { SignInData} from 'src/app/model/signInData'
@@ -11,13 +12,17 @@ import { SignInData} from 'src/app/model/signInData'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  // @Input() title: string="";
   areCredentialsInvalid = false;
 
   constructor(
     private router: Router,
     private authenticationService: AuthService,
+    private titleService:Title
     ) 
-    { }
+    { 
+      this.titleService.setTitle("Login Page");
+    }
 
   ngOnInit(): void {
   }
