@@ -8,7 +8,7 @@
 
                 <div class="form-group">
                     <label for="name">Product Name</label>
-                    <input type="text" class="form-control" id="name" formControlName="name">
+                    <input type="text" class="form-control" id="name" formControlName="name" required> 
                     <span *ngIf="productForm.name!.invalid && productForm.name!.touched"
                         [ngStyle]="{'color': 'red'}">Product Name is
                         required </span>
@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label for="image">Product Image Link</label>
-                    <input type="text" class="form-control" id="image" formControlName="image">
+                    <input type="text" class="form-control" id="image" formControlName="image" required>
                     <span *ngIf="productForm.image!.invalid && productForm.image!.touched"
                         [ngStyle]="{'color': 'red'}">Product Image is
                         required </span>
@@ -24,21 +24,21 @@
 
                 <div class="form-group">
                     <label for="keyNo">Number of keys</label>
-                    <input type="number" class="form-control" id="keyNo" formControlName="keyNo" min="1">
+                    <input type="number" class="form-control" id="keyNo" formControlName="keyNo" min="1" required>
                     <span *ngIf="productForm.keyNo!.invalid && productForm.keyNo!.touched"
                         [ngStyle]="{'color': 'red'}">Number of keys is required </span>
                 </div>
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Description</mat-label>
-                    <textarea matInput formControlName="description"></textarea>
+                    <textarea matInput formControlName="description" required></textarea>
                     <span *ngIf="productForm.description!.invalid && productForm.description!.touched"
                         [ngStyle]="{'color': 'red'}">Description is required </span>
                 </mat-form-field>
 
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="number" class="form-control" id="price" formControlName="price" min="1">
+                    <input type="number" class="form-control" id="price" formControlName="price" min="1" required>
                     <span *ngIf="productForm.price!.invalid && productForm.price!.touched"
                         [ngStyle]="{'color': 'red'}">Price is required </span>
                 </div>

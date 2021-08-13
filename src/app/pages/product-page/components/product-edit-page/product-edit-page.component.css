@@ -1,0 +1,11 @@
+input.ng-invalid.ng-touched {
+    border-right: 5px solid red;
+}
+
+input.ng-valid {
+    border-right: 5px solid green;
+}
+
+.btn:disabled {
+    cursor: no-drop;
+}
