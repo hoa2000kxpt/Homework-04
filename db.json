@@ -52,18 +52,11 @@
   "products": [
     {
       "name": "Bàn phím chơi game giả cơ E-DRA EK503",
-      "keyNo": 104,
+      "keyNo": 100,
       "description": "phân khúc giá dưới 300 ngàn",
       "price": "269000",
       "image": "http://edravn.com/media/product/344_z2611444876451_c32d22d534df416029532d5c50d53abb.jpg",
-      "id": 1,
-      "transactions": [
-        {
-          "status": "sell",
-          "quantity": 500,
-          "date": "12/08/2000"
-        }
-      ]
+      "id": 1
     },
     {
       "id": 2,
@@ -125,6 +118,20 @@
       "transactionDate": "2021-08-15",
       "productID": "2",
       "id": 5
+    },
+    {
+      "transactionStatus": "buy",
+      "transactionQuantity": 75,
+      "transactionDate": "2021-08-22",
+      "productID": "1",
+      "id": 6
+    },
+    {
+      "transactionStatus": "sell",
+      "transactionQuantity": 50,
+      "transactionDate": "2021-08-13",
+      "productID": "2",
+      "id": 7
     }
   ]
 }

@@ -22,7 +22,7 @@ export class ProductDetailsPageComponent implements OnInit {
     private router: ActivatedRoute,
     private titleService:Title
   ) {
-    this.titleService.setTitle("Product Details");
+    
    }
 
   ngOnInit(): void {
@@ -34,6 +34,7 @@ export class ProductDetailsPageComponent implements OnInit {
         console.log(this.productDetails.name);
         // this.productDetails = JSON.parse(JSON.stringify(this.productObject));
         // console.log(this.productDetails)
+        this.titleService.setTitle(this.productDetails.name);
       }
     )
   }
